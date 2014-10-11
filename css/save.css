@@ -58,6 +58,7 @@ nav.nav {
     border-radius: 0px;
     margin:0;
     padding-bottom:0.1em;
+    border-bottom: 6px solid #F88017;
 }
 
 nav.nav ul {
