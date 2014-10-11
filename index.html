@@ -36,74 +36,96 @@
 
 <body>
   <header>
-    <nav class="nav">
-
-      <h1 class="align-center ostrich-sans-bold"><br>
+    <div class="signage">
+      <h1 class="align-center museo-slab"><br>
       UNSW Travel Save</h1>
-      <ul></ul>
-    </nav>
+    </div>
   </header>
-  <div class="container"> 
-		<div class="equalize row">
-			<div class="one third padded">
-            <!-- empty -->
-			</div>
-	
-			<form action="#" method="post"class="one third padded">
-			<fieldset>
-			<legend>Travel Details</legend>
-			<!--Title-->
-			<div class="row">
-				<div class="one whole padded">
-					<label for="startingStation">Starting Station</label> 
-              		<input class="typeahead" id="startingStation" placeholder="Train or Bus Station" type="text">
-				</div>
-			</div>
 
-			<div class="row">
-	            <div class="one whole padded">
-	              <label for="travelTypes">Travel Types:</label>
+  <div class="container">
+    <div class="equalize row">
+      <div class="one third padded">
+        <!-- empty -->
+      </div>
 
-	              <ul class="unstyled zero">
-	                <li><input checked id="train" name="travelTypes" type="radio">
-	                <label class="inline" for="train">Train</label></li>
+      <form action="#" class="one third padded" method="post">
+        <fieldset>
+          <legend>Travel Details</legend> <!--Title-->
 
-	                <li><input id="bus" name="travelTypes" type="radio">
-	                <label class="inline" for="bus">Bus</label></li>
-	              </ul>
-	            </div>
-          	</div>
+          <div class="row">
+            <div class="one whole padded">
+              <label for="startingStation">Starting Station</label>
+              <input class="typeahead" id="startingStation" placeholder="Train or Bus Station" type="text">
+            </div>
+          </div>
 
-			<div class="row">
-				<div class="one whole padded">Days of Travel Per Week<span class="select-wrap">
-				<select class="unselected">
-				<option value="" disabled="" selected=""><big>Please select</big></option>
-				<option value="1">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-				<option value="6">6</option>
-				<option value="7">7</option>
-				</select></span></div>
-			</div>
+          <div class="row">
+            <div class="one whole padded">
+              <label for="travelTypes">Travel Types:</label>
 
-			<!-- Submit -->
-			<div class="row">
-				<div class="one whole padded">
-				<a href= "#" rel="Submit" class="block green button"> 
-				Calculate Travel
-				</a>
-				</div>
-			</div>
-			</form>
-	
-			<div class="one third padded">
-			<!-- empty -->
-			</div>
-		</div>
-	</div>
-  <!-- javascript-->
+              <ul class="unstyled zero">
+                <li><input checked id="train" name="travelTypes" type="radio">
+                <label class="inline" for="train">Train</label></li>
+
+                <li><input id="bus" name="travelTypes" type="radio">
+                <label class="inline" for="bus">Bus</label></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="one whole padded">
+              Days of Travel Per Week <span class="select-wrap"><select class=
+              "unselected">
+                <option disabled selected value="">
+                  Please select
+                </option>
+
+                <option value="1">
+                  1
+                </option>
+
+                <option value="2">
+                  2
+                </option>
+
+                <option value="3">
+                  3
+                </option>
+
+                <option value="4">
+                  4
+                </option>
+
+                <option value="5">
+                  5
+                </option>
+
+                <option value="6">
+                  6
+                </option>
+
+                <option value="7">
+                  7
+                </option>
+              </select></span>
+            </div>
+          </div><!-- Submit -->
+
+          <div class="row">
+            <div class="one whole padded">
+              <a class="block green button" href="#" rel="Submit">Calculate
+              Travel</a>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+
+      <div class="one third padded">
+        <!-- empty -->
+      </div>
+    </div>
+  </div><!-- javascript-->
   <script src="js/groundwork.all.js" type="text/javascript"></script> <script type="text/javascript">
 function DoSubmit(){
         return true;
