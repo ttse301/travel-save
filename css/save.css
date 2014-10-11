@@ -28,9 +28,6 @@ input.on {
     font-family: 'Raleway', sans-serif;
 }
 
-.owing input {
-    margin-top:-2px;
-}
 
 fieldset {
     border: 0;
@@ -48,181 +45,15 @@ input, select {
     font-size:120%;
 }
 
-nav.nav::before {
-    visibility: hidden;
-    width:0;
-}
-nav.nav {
+
+.signage {
     -moz-border-radius: 0px;
     -webkit-border-radius: 0px;
     border-radius: 0px;
     margin:0;
     padding-bottom:0.1em;
-    border-bottom: 6px solid #F88017;
-}
-
-nav.nav ul {
-    border-bottom: 6px solid #F88017;
-}
-
-nav.nav ul li a {
-    padding:1em;
-    font-size: 120%;
-}
-
-.nav button.hamburger {
-    width:50%;
-    text-align:right;
-}
-.nav button.hamburger::before {
-    color:#FFF;
-}
-.nav a i {
-    margin-right:10px;
-}
-.nav li a.selected {
-    background-color:#F88017;
-}
-.nav a, .nav a:visited, .nav button, nav.nav {
     border:0!important;
     background-color:#9E2600;
     color: #FFF;
     font-weight: normal;
 }
-.nav a:hover, .nav a:active {
-    background-color:#C64E00;
-    color: #FFF;
-}
-.nav a.back-btn:hover,.nav a.back-btn:active{
-    background:none!important;
-}
-
-.main-menu a{
-    width:200px;
-}
-
-.add-friends-padding {
-    padding-top:20px;
-    padding-bottom:20px;
-}
-
-/* My Coffee Runs */
-.runSummary {
-    background-color:#f6f0e9;
-    text-align:left;
-    position:relative;
-    width:100%;
-    padding:1em;
-}
-
-.runSummary.alternate {
-	background-color:#BFDED0;
-}
-
-.runSummary .runHeader {
-    display:block;
-}
-
-.runSummary .runTitle {
-    text-align:left;
-    font-size:150%;
-}
-
-.runSummary .runLocation {
-    text-align:left;
-    font-size:120%;
-}
-
-.runSummary .runLocation i {
-    margin-right:5px;
-}
-
-.runSummary .runPeople {
-    text-align:left;
-    color:#888;
-}
-
-.runSummary .timer {
-    float:right;
-    top:0;
-    position:absolute;
-    right:15%;
-    width:30%;
-    height:100%;
-}
-
-.runSummary .timer input {
-    height:50%;
-    border:0;
-    -moz-border-radius: 0px;
-    -webkit-border-radius: 0px;
-    border-radius: 0px;
-    font-size: 150%;
-    text-align:center;
-}
-
-.runSummary.alternate input {
-	background-color:#fbf7e5;
-}
-
-.runSummary .timer input.dateField {
-    font-size: 100%;
-}
-
-.runSummary .expand {
-    float:right;
-    background-color:#3498db;
-    height:100%;
-    position:absolute;
-    top:0;
-    right:0;
-    width:15%;
-    text-align:center;
-    line-height:100%;
-}
-
-.runSummary.alternate .expand {
-    background-color:#2788c9;
-}
-
-.runSummary span {;
-    font-size:48px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 50%;
-    height: 30%;
-    margin: auto;
-    color:#FFF;
-}
-
-.addCoffeeRunBtn {
-    width: 100%;
-    font-size:24px;
-    margin-top:3em;
-}
-
-/* Tabs */
-.tabs>ul li, [role~=tab], [role~=tab]:hover, .tabs>ul li:focus, [role~=tab]:focus, .tabs.accordion>ul {
-background: #BFDED0;
-text-decoration: none;
-color: #616161;
-}
-
- .tabs>ul li:hover {
-    background:#fff;
- }
-
- .doneButton {
-    width: 100%;
-    margin-bottom:1em;
-    margin-top:1em;
-    padding-top:0.8em;
-    padding-bottom:0.8em;
- }
-
- .complete {
-    font-size: 0.6em;
- }
