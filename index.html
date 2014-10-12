@@ -22,6 +22,13 @@
   <script src="js/libs/jquery-1.10.2.min.js" type="text/javascript"></script><!-- framework css --><!--[if gt IE 9]><!-->
   <script src="typeahead.jquery.js" type="text/javascript"></script>
   <script src="autocomplete.js" type="text/javascript"></script>
+
+  <script>
+    function addBusSection() {
+      $('#bus').append('<input id="busSection" placeholder="Number of Bus Sections (1, 2, 3)" type="text">');
+    }
+  </script>
+
   <link href="autocomplete.css" rel="stylesheet" type="text/css">
   <link href="css/groundwork.css" rel="stylesheet" type="text/css">
   <link href="css/save.css" rel="stylesheet" type="text/css"><!--<![endif]-->
@@ -54,24 +61,17 @@
           <legend>Travel Details</legend> <!--Title-->
 
           <div class="row">
-            <div class="one whole padded">
-              <label for="startingStation">Starting Station</label>
-              <input class="typeahead" id="startingStation" placeholder="Train or Bus Station" type="text">
-              <pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: optimizelegibility; text-transform: none;"></pre>
+            <div class="one whole padded" id="bus">
+              <label for="bus">Bus:</label>
+              <a class="icon" title="Add Bus Section" onClick="addBusSection()" href="#">
+                <i class="icon-plus"></i>
+              </a>Add Bus Section
             </div>
-          </div>
 
-          <div class="row">
             <div class="one whole padded">
-              <label for="travelTypes">Travel Types:</label>
-
-              <ul class="unstyled zero">
-                <li><input checked id="train" name="travelTypes" type="radio">
-                <label class="inline" for="train">Train</label></li>
-
-                <li><input id="bus" name="travelTypes" type="radio">
-                <label class="inline" for="bus">Bus</label></li>
-              </ul>
+              <label for="train">Train Station:</label>
+              <input class="typeahead" id="train" placeholder="Train Station" type="text">
+              <pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: optimizelegibility; text-transform: none;"></pre>
             </div>
           </div>
 
