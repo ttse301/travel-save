@@ -69,7 +69,7 @@
             </div>
 
             <div class="one whole padded">
-              <label for="train">* Train Station:</label>
+              <label for="train">Train Station*:</label>
               <input class="typeahead" id="train" placeholder="Train Station" type="text">
               <pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: optimizelegibility; text-transform: none;"></pre>
             </div>
@@ -123,6 +123,9 @@
             </div>
 			   		  <div class="one whole padded"> * Don't worry about adding the bus from Central to UNSW We did that for you :) </div>
           </div>
+          <div class="row">
+            *Assumes a bus is caught from Central to UNSW.
+          </div>
         </fieldset>
       </form>
 
@@ -132,7 +135,7 @@
     </div>
   </div><!-- javascript-->
   <script src="js/groundwork.all.js" type="text/javascript"></script> <script type="text/javascript">
-function DoSubmit(){
+  function DoSubmit(){
 		var trains = InitTrains();
 		var station = document.getElementById("train").value;
 		
@@ -167,7 +170,7 @@ function DoSubmit(){
 		
 		localStorage.setItem('Buses', bus);
 		return true;
-      }
+  }
   </script>
 </body>
 </html>
