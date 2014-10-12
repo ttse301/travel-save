@@ -118,7 +118,7 @@
 
           <div class="row">
             <div class="one whole padded">
-              <a class="block green button" href="result.html" rel="Submit" onClick="DoSubmit()">Calculate
+              <a class="block green button" type="button" onClick="DoSubmit()">Calculate
               Travel</a>
             </div>
               <div class="one whole padded"> * Don't worry about adding the bus from Central to UNSW We did that for you :) </div>
@@ -136,6 +136,16 @@
     var station = document.getElementById("train").value;
     var x = document.getElementById("busSection");
 
+    if (!station && x == null) {
+      alert('Bus section or train station must be provided.');
+      return false;
+    }
+
+    if (!number.value) {
+      alert("Days of travel must be selected.");
+      return false;
+    }
+
     var trains = InitTrains();
     
     if(station == ""){
@@ -148,7 +158,6 @@
     localStorage.setItem('TrainPrices', array);
     
     var bus = []; 
-    
     for(i = 0; x != null;i++){
       if(x.options[x.selectedIndex].value == 1){
         bus[i] = 0.88;  
@@ -167,8 +176,9 @@
     }
     
     localStorage.setItem('Buses', bus);
+    location.href = "result.html";
     return true;
-      }
+  }
   </script>
 </body>
 </html>
