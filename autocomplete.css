@@ -1,0 +1,41 @@
+.typeahead {
+  font-size:120%;
+  height:35px;
+  box-sizing: border-box;
+  background: none repeat scroll 0 0 #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: block;
+  height: 2.25em;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 100%;
+  padding: 0.4em;
+  width: 100%;
+}
+
+.typeahead:focus {
+  border: 2px solid #0097cf;
+}
+
+.tt-dropdown-menu {
+  text-align: left;
+  width: 100%;
+  margin-top: 12px;
+  padding: 8px 0 0 14px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 8px;
+     -moz-border-radius: 8px;
+          border-radius: 8px;
+  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+     -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+          box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+#rtl-support .tt-dropdown-menu {
+  text-align: right;
+}
