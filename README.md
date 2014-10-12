@@ -19,7 +19,7 @@ The site is live and running at http://ttse301.github.io
 ### Travel details
 * If your primary mode of travel is by train, simply enter your origin train station and the number of days you are going to travel per week.
 * If your primary mode of travel is by bus, add a bus section and select the appropriate ticket to uni.
-* If your travel by bus AND by train, add the appropriate bus section and your origin train station.
+* If you travel by bus AND by train, add the appropriate bus section and your origin train station.
 
 ### Understanding travel results
 * All prices are return trip prices.
