@@ -114,12 +114,7 @@
     
     var trains = localStorage.getItem('TrainPrices').split(",");
     var daysPerWeek = parseFloat(localStorage.getItem('NumberDays'))*2;
-    var help = document.getElementById("header");
-    var newContent = document.createElement('div');
-    newContent.innerHTML = "Ticket Choices for " + trains[0] + " to UNSW " + daysPerWeek/2 + " times per Week";
-    while (newContent.firstChild) {
-      help.appendChild(newContent.firstChild);
-    }
+    var table = document.getElementById("header").innerHTML = "Ticket Choices for " + trains[0] + " to UNSW " + daysPerWeek/2 + " times per Week";
     var table = document.getElementById("results");
     
     var busNumber = 0.00;
@@ -129,37 +124,95 @@
     }
     busNumber = busNumber * daysPerWeek;
     
-    if(trains[1] == "$0"){    
+    if(trains[0] == "Bus"){   
       table.rows[0].cells[0].innerHTML = "1";
       table.rows[0].cells[1].innerHTML = "Travel 10s";
-      table.rows[0].cells[2].innerHTML = "$" + (busNumber + (parseFloat(trains[1].replace('$',''))*daysPerWeek)).toFixed(2);
+      var a = (busNumber + (parseFloat(trains[1].replace('$',''))*daysPerWeek)).toFixed(2);
+      table.rows[0].cells[2].innerHTML = "$" + a;
 
       table.rows[1].cells[0].innerHTML = "2";
       table.rows[1].cells[1].innerHTML = "Multi Weekly Pass";
-      table.rows[1].cells[2].innerHTML = "$" + (parseFloat(trains[4].replace('$',''))).toFixed(2);
+      var b = (parseFloat(trains[4].replace('$',''))).toFixed(2);
+      table.rows[1].cells[2].innerHTML = "$" + b;
       
       table.rows[2].cells[0].innerHTML = "3";
       table.rows[2].cells[1].innerHTML = "Multi Day Pass";
-      table.rows[2].cells[2].innerHTML = "$" + (parseFloat(trains[5].replace('$',''))*daysPerWeek/2).toFixed(2);
+      var c =(parseFloat(trains[5].replace('$',''))*daysPerWeek/2).toFixed(2);
+      table.rows[2].cells[2].innerHTML = "$" + c;
+      table.deleteRow(3);
+      var max = a;
+      if (b < max){
+        max = b;
+      }
+      if(c < max){
+        max = c;
+      }
       
-      table.deleteRow(3)
+      if(max == a){
+        table.rows[0].cells[0].innerHTML = "<b>"+ table.rows[0].cells[0].innerHTML + "</b>";
+        table.rows[0].cells[1].innerHTML = "<b>"+ table.rows[0].cells[1].innerHTML + "</b>";
+        table.rows[0].cells[2].innerHTML = "<b>"+ table.rows[0].cells[2].innerHTML + "</b>";
+      } else if(max == b){
+        table.rows[1].cells[0].innerHTML = "<b>"+ table.rows[1].cells[0].innerHTML + "</b>";
+        table.rows[1].cells[1].innerHTML = "<b>"+ table.rows[1].cells[1].innerHTML + "</b>";
+        table.rows[1].cells[2].innerHTML = "<b>"+ table.rows[1].cells[2].innerHTML + "</b>";
+      }else if(max == c){
+          table.rows[2].cells[0].innerHTML = "<b>"+ table.rows[2].cells[0].innerHTML + "</b>";
+        table.rows[2].cells[1].innerHTML = "<b>"+ table.rows[2].cells[1].innerHTML + "</b>";
+        table.rows[2].cells[2].innerHTML = "<b>"+ table.rows[2].cells[2].innerHTML + "</b>";
+      }
+      
+      
     } else {
       table.rows[0].cells[0].innerHTML = "1";
       table.rows[0].cells[1].innerHTML = "Train Single and Travel 10s";
-      table.rows[0].cells[2].innerHTML = "$" + (busNumber + (parseFloat(trains[1].replace('$',''))*daysPerWeek)).toFixed(2);
+      var a = (busNumber + (parseFloat(trains[1].replace('$',''))*daysPerWeek)).toFixed(2);
+      table.rows[0].cells[2].innerHTML = "$" + a;
     
       table.rows[1].cells[0].innerHTML = "2";
       table.rows[1].cells[1].innerHTML = "Train Weekly and Travel 10s";
-      table.rows[1].cells[2].innerHTML = "$" + (busNumber + (parseFloat(trains[2].replace('$','')))).toFixed(2);
+      var b =(busNumber + (parseFloat(trains[2].replace('$','')))).toFixed(2);
+      table.rows[1].cells[2].innerHTML = "$" + b;
 
       table.rows[2].cells[0].innerHTML = "3";
       table.rows[2].cells[1].innerHTML = "Multi Weekly Pass";
-      table.rows[2].cells[2].innerHTML = "$" + (parseFloat(trains[4].replace('$',''))).toFixed(2);
+      var c = (parseFloat(trains[4].replace('$',''))).toFixed(2);
+      table.rows[2].cells[2].innerHTML = "$" + c;
       
       table.rows[3].cells[0].innerHTML = "4";
       table.rows[3].cells[1].innerHTML = "Multi Day Pass";
-      table.rows[3].cells[2].innerHTML = "$" + (parseFloat(trains[5].replace('$',''))*daysPerWeek/2).toFixed(2);
-
+      var d = (parseFloat(trains[5].replace('$',''))*daysPerWeek/2).toFixed(2);
+      table.rows[3].cells[2].innerHTML = "$" + d;
+      
+      var max = a;
+      if (b < max){
+        max = b;
+      }
+      if(c < max){
+        max = c;
+      }
+      if(d < max){
+        max = d;
+      }
+      
+      if(max == a){
+        table.rows[0].cells[0].innerHTML = "<b>"+ table.rows[0].cells[0].innerHTML + "</b>";
+        table.rows[0].cells[1].innerHTML = "<b>"+ table.rows[0].cells[1].innerHTML + "</b>";
+        table.rows[0].cells[2].innerHTML = "<b>"+ table.rows[0].cells[2].innerHTML + "</b>";
+      } else if(max == b){
+        table.rows[1].cells[0].innerHTML = "<b>"+ table.rows[1].cells[0].innerHTML + "</b>";
+        table.rows[1].cells[1].innerHTML = "<b>"+ table.rows[1].cells[1].innerHTML + "</b>";
+        table.rows[1].cells[2].innerHTML = "<b>"+ table.rows[1].cells[2].innerHTML + "</b>";
+      }else if(max == c){
+          table.rows[2].cells[0].innerHTML = "<b>"+ table.rows[2].cells[0].innerHTML + "</b>";
+        table.rows[2].cells[1].innerHTML = "<b>"+ table.rows[2].cells[1].innerHTML + "</b>";
+        table.rows[2].cells[2].innerHTML = "<b>"+ table.rows[2].cells[2].innerHTML + "</b>";
+      }
+      else if(max == d){
+          table.rows[3].cells[0].innerHTML = "<b>"+ table.rows[3].cells[0].innerHTML + "</b>";
+        table.rows[3].cells[1].innerHTML = "<b>"+ table.rows[3].cells[1].innerHTML + "</b>";
+        table.rows[3].cells[2].innerHTML = "<b>"+ table.rows[3].cells[2].innerHTML + "</b>";
+      }
     }
   }
 
