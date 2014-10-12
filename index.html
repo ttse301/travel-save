@@ -61,17 +61,17 @@
           <legend>Travel Details</legend> <!--Title-->
 
           <div class="row">
+            <div class="one whole padded" title="We automatically add the price of the bus to UNSW">
+              <label for="train">* Your Nearest Train Station to UNSW:</label>
+              <input class="typeahead" id="train" placeholder="Train Station" type="text">
+              <pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: optimizelegibility; text-transform: none;"></pre>
+            </div>
+
             <div class="one whole padded" id="bus">
-              <label for="bus">Bus to UNSW or Your Nearest Train Station:</label>
+              <label for="bus">Bus to UNSW:</label>
               <a class="icon" title="Add Bus Section" onClick="addBusSection()" href="#">
                 <i class="icon-plus"></i>
               </a>Add Bus Section
-            </div>
-
-            <div class="one whole padded">
-              <label for="train">* Your Train Station to UNSW:</label>
-              <input class="typeahead" id="train" placeholder="Train Station" type="text">
-              <pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: optimizelegibility; text-transform: none;"></pre>
             </div>
         
           </div>
