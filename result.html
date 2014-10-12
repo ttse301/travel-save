@@ -49,7 +49,11 @@
       <div class="three fifths padded">
         <fieldset>
 			
-          <legend id="header">Ticket Choices</legend>
+          <legend>Ticket Choices</legend>
+          <div class="row">
+            <div class="one whole" id="header">
+            </div>
+          </div>
           <table class="responsive" data-max="15">
             <thead>
               <tr>
@@ -110,7 +114,7 @@ function FillTable(){
 		
 		var trains = localStorage.getItem('TrainPrices').split(",");
 		var daysPerWeek = parseFloat(localStorage.getItem('NumberDays'))*2;
-		var table = document.getElementById("header").innerHTML = "Ticket Choices for " + trains[0] + " to UNSW" + daysPerWeek/2 + " times per Week";
+		document.getElementById("header").innerHTML =  trains[0] + " to UNSW" + daysPerWeek/2 + " times per Week";
 		var table = document.getElementById("results");
 		
 		var busNumber = 0.00;
