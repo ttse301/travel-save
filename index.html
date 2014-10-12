@@ -25,7 +25,7 @@
 
   <script>
     function addBusSection() {
-      $('#bus').append('<input id="busSection" placeholder="Number of Bus Sections (1, 2, 3)" type="text">');
+      $('#bus').append('<select id="busSection"> <option value="1">MyBus Section 1</option> <option value="2">MyBus Section 2</option><option value="3">MyBus Section 3</option></select>');
     }
   </script>
 
@@ -62,18 +62,18 @@
 
           <div class="row">
             <div class="one whole padded" id="bus">
-              <label for="bus">Bus:</label>
+              <label for="bus">Bus to UNSW or Your Nearest Train Station:</label>
               <a class="icon" title="Add Bus Section" onClick="addBusSection()" href="#">
                 <i class="icon-plus"></i>
               </a>Add Bus Section
             </div>
 
             <div class="one whole padded">
-              <label for="train">Train Station*:</label>
+              <label for="train">* Your Train Station to UNSW:</label>
               <input class="typeahead" id="train" placeholder="Train Station" type="text">
               <pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: optimizelegibility; text-transform: none;"></pre>
             </div>
-			  
+        
           </div>
 
           <div class="row">
@@ -118,10 +118,10 @@
 
           <div class="row">
             <div class="one whole padded">
-              <a class="block green button" href="result.html" rel="Submit" onClick="DoSubmit()">Calculate
+              <a class="block green button" type="button" onClick="DoSubmit()">Calculate
               Travel</a>
             </div>
-			   		  <div class="one whole padded"> * Don't worry about adding the bus from Central to UNSW We did that for you :) </div>
+              <div class="one whole padded"> * Don't worry about adding the bus from Central to UNSW We did that for you :) </div>
           </div>
         </fieldset>
       </form>
@@ -133,40 +133,51 @@
   </div><!-- javascript-->
   <script src="js/groundwork.all.js" type="text/javascript"></script> <script type="text/javascript">
   function DoSubmit(){
-		var trains = InitTrains();
-		var station = document.getElementById("train").value;
-		
-		if(station == ""){
-			station = "Bus";
-			array = ["Bus","$0","$0","$0","$23.00","$11.50"];
-		} else {
-			var array = getStationData(trains, station);
-		}
-		localStorage.setItem('NumberDays', number.value);
-		localStorage.setItem('TrainPrices', array);
-		
-		var bus = []; 
-		var x = document.getElementById("busSection");
-		for(i = 0; x != null;i++){
-			
-			if(x.value == 1){
-				bus[i] = 0.88;	
-			} else if (x.value == 2){
-				bus[i] = 1.44;
-			} else if (x.value == 3){
-				bus[i] = 1.84;
-			} else {}
-			
-			//bus[i] = x.value;
-			x = x.nextSibling;
-		}
-		
-		if(station != "Bus"){
-			bus[bus.length] = 1.44;
-		}
-		
-		localStorage.setItem('Buses', bus);
-		return true;
+    var station = document.getElementById("train").value;
+    var x = document.getElementById("busSection");
+
+    if (!station && x == null) {
+      alert('Bus section or train station must be provided.');
+      return false;
+    }
+
+    if (!number.value) {
+      alert("Days of travel must be selected.");
+      return false;
+    }
+
+    var trains = InitTrains();
+    
+    if(station == ""){
+      station = "Bus";
+      array = ["Bus","$0","$0","$0","$23.00","$11.50"];
+    } else {
+      var array = getStationData(trains, station);
+    }
+    localStorage.setItem('NumberDays', number.value);
+    localStorage.setItem('TrainPrices', array);
+    
+    var bus = []; 
+    for(i = 0; x != null;i++){
+      if(x.options[x.selectedIndex].value == 1){
+        bus[i] = 0.88;  
+      } else if (x.options[x.selectedIndex].value == 2){
+        bus[i] = 1.44;
+      } else if (x.options[x.selectedIndex].value == 3){
+        bus[i] = 1.84;
+      } else {}
+      
+      //bus[i] = x.value;
+      x = x.nextSibling;
+    }
+    
+    if(station != "Bus"){
+      bus[bus.length] = 1.44;
+    }
+    
+    localStorage.setItem('Buses', bus);
+    location.href = "result.html";
+    return true;
   }
   </script>
 </body>
